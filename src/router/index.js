@@ -1,19 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import todoApp from '../views/TodoApp.vue'
+import bookAPIView from '../views/BookAPIView.vue'
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: '/todoApp',
+    name: 'todo',
+    component: todoApp
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path:'/bookAPIView',
+    name:'bookAPIView',
+    component: bookAPIView
   }
 ]
 
