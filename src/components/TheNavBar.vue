@@ -7,6 +7,9 @@
                 <li class="navbar__item">
                     <router-link to="/bookAPIView" class="navbar__link">Search-Book</router-link>
                 </li>
+                <li class="navbar__item">
+                    <router-link to="/CalendarAPPView" class="navbar__link"> Calendar-app</router-link>
+                </li>
             </ul>
     </nav>
 </template>
