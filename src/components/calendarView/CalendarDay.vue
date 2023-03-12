@@ -1,15 +1,40 @@
 <template>
     <li
       class="calendar-day"
+      @click.self="askToAddEvent()"
+      
     >
-      <span>{{numero}}</span>
+      <span >{{numero}}</span>
+      <TheOverlay
+        v-if="isAskToAdd"
+        message="Voulez-vous vraiment ajouter une note pour ce jour ?"
+        @close="isAskToAdd=false"
+        @confirm="confirmAddEvent()"
+      />
     </li>
+
   </template>
   
   <script setup>
-  import { defineProps } from 'vue';
+  import TheOverlay from '../TheOverlay.vue';
+  import { defineProps, ref } from 'vue';
+
+
+  let isAskToAdd = ref(false)
+
+  const askToAddEvent = () => {
+    isAskToAdd.value = true
+  }
+
+  const confirmAddEvent = () => {
+
+    isAskToAdd.value = false
+  }
+
 
   defineProps(["numero"])
+
+
   
   </script>
   
@@ -31,5 +56,8 @@
     right: 5px;
   }
   
+
+
+
   </style>
   
